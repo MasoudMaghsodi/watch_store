@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:watch_store/components/themes.dart';
+import 'package:watch_store/screens/register_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,12 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Watch Store",
-      home: Center(
-        child: Text("hi"),
-      ),
+      theme: lightTheme(),
+      home: RegisterScreen(),
     );
   }
 }
