@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:watch_store/components/extention.dart';
-import 'package:watch_store/components/text_style.dart';
 import 'package:watch_store/res/dimens.dart';
 import 'package:watch_store/res/strings.dart';
 import 'package:watch_store/widgets/app_text_field.dart';
 import 'package:watch_store/widgets/avatar.dart';
 import 'package:watch_store/widgets/main_button.dart';
+import 'package:watch_store/widgets/registration_app_bar.dart';
 
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});
@@ -19,24 +19,7 @@ class RegisterScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size(size.width, size.height * 0.1),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.arrow_back_ios,
-                ),
-              ),
-              const Text(
-                AppStrings.register,
-                style: LightAppTextStyle.title,
-              )
-            ],
-          ),
-        ),
+        appBar: RegistrationAppBar(size: size),
         body: SingleChildScrollView(
           child: SizedBox(
             width: double.infinity,
