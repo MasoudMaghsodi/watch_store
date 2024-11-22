@@ -16,11 +16,11 @@ class MainButton extends StatelessWidget {
       height: size.height * .07,
       width: size.width * .75,
       child: ElevatedButton(
-        style: AppButtonStyle.mainButtonStyle,
+        style: AppButtonStyles.mainButtonStyle,
         onPressed: onPressed,
         child: Text(
           text,
-          style: LightAppTextStyle.mainButton,
+          style: AppTextStyles.mainbuttn,
         ),
       ),
     );

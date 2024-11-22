@@ -19,7 +19,7 @@ class Avatar extends StatelessWidget {
         AppDimens.medium.height,
         const Text(
           AppStrings.chooseProfileImage,
-          style: LightAppTextStyle.avatarText,
+          style: AppTextStyles.avatarText,
         ),
       ],
     );

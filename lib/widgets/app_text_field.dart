@@ -38,11 +38,11 @@ class AppTextField extends StatelessWidget {
               children: [
                 Text(
                   prefixLable,
-                  style: LightAppTextStyle.title,
+                  style: AppTextStyles.title,
                 ),
                 Text(
                   lable,
-                  style: LightAppTextStyle.title,
+                  style: AppTextStyles.title,
                 ),
               ],
             ),
@@ -56,7 +56,7 @@ class AppTextField extends StatelessWidget {
               controller: controller,
               keyboardType: inputType,
               decoration: InputDecoration(
-                hintStyle: LightAppTextStyle.hint,
+                hintStyle: AppTextStyles.hint,
                 hintText: hint,
                 prefixIcon: icon,
               ),

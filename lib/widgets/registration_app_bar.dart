@@ -25,7 +25,7 @@ class RegistrationAppBar extends StatelessWidget implements PreferredSize {
           ),
           const Text(
             AppStrings.register,
-            style: LightAppTextStyle.title,
+            style: AppTextStyles.title,
           )
         ],
       ),
