@@ -4,6 +4,7 @@ import 'package:watch_store/components/text_style.dart';
 import 'package:watch_store/res/colors.dart';
 import 'package:watch_store/res/dimens.dart';
 
+// ignore: must_be_immutable
 class BtmNavItem extends StatelessWidget {
   String iconSvgPath;
   String text;
