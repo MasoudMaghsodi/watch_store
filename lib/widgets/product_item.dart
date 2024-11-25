@@ -14,11 +14,11 @@ class ProductItem extends StatelessWidget {
     this.discount = 0,
     this.time = 0,
   });
-  final productName;
-  final productPrice;
-  final productOldPrice;
-  final discount;
-  final time;
+  final String productName;
+  final int productPrice;
+  final int productOldPrice;
+  final int discount;
+  final int time;
 
   @override
   Widget build(BuildContext context) {
@@ -54,13 +54,13 @@ class ProductItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    productPrice.toString(),
+                    "${productPrice.separateWithComma} تومان",
                     style: AppTextStyles.title,
                   ),
                   Visibility(
                     visible: discount > 0 ? true : false,
                     child: Text(
-                      productOldPrice.toString(),
+                      "${productOldPrice.separateWithComma} تومان",
                       style: AppTextStyles.oldPriceStyle,
                     ),
                   ),

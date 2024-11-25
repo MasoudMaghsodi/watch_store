@@ -71,11 +71,11 @@ class HomeScreen extends StatelessWidget {
                         scrollDirection: Axis.horizontal,
                         itemCount: 8,
                         shrinkWrap: true,
-                        itemBuilder: (context, index) => ProductItem(
+                        itemBuilder: (context, index) => const ProductItem(
                           productName: " ساعت مردانه ",
-                          productPrice: 63500.separateWithComma,
+                          productPrice: 63500,
                           discount: 20,
-                          productOldPrice: 122000.separateWithComma,
+                          productOldPrice: 122000,
                           time: 200,
                         ),
                       ),

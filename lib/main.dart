@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:watch_store/components/themes.dart';
 import 'package:watch_store/route/names.dart';
-import 'package:watch_store/screens/product_single_screen.dart';
+import 'package:watch_store/screens/cat.dart';
 // import 'package:watch_store/route/routes.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: ScreenNames.root,
       // routes: routes,
       theme: lightTheme(),
-      home: const ProductSingleScreen(),
+      home: const CatScreen(),
     );
   }
 }
