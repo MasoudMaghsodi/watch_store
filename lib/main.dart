@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:watch_store/components/themes.dart';
-import 'package:watch_store/route/names.dart';
 import 'package:watch_store/route/routes.dart';
+import 'package:watch_store/screens/auth/cubit/auth_cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:watch_store/screens/auth/send_sms_screen.dart';
+// import 'package:watch_store/screens/mainScreen/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +15,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Watch Store",
-      initialRoute: ScreenNames.root,
-      routes: routes,
-      theme: lightTheme(),
-      // home: const CartScreen(),
+    return BlocProvider(
+      create: (context) => AuthCubit(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: "Watch Store",
+        routes: routes,
+        theme: lightTheme(),
+        home: BlocBuilder<AuthCubit, AuthState>(
+          builder: (context, state) {
+            // if (state is LoggedInState) {
+            //   return const MainScreen();
+            // } else if (state is LoggedOutState) {
+            //   return SendSmsScreen();
+            // } else {
+            return SendSmsScreen();
+            //   }
+          },
+        ),
+      ),
     );
   }
 }
