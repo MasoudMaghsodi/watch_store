@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:watch_store/components/button_style.dart';
 import 'package:watch_store/components/text_style.dart';
 import 'package:watch_store/gen/assets.gen.dart';
 import 'package:watch_store/res/dimens.dart';
@@ -7,8 +8,8 @@ import 'package:watch_store/res/strings.dart';
 import 'package:watch_store/widgets/app_bar.dart';
 import 'package:watch_store/widgets/shoping_cart_item.dart';
 
-class CatScreen extends StatelessWidget {
-  const CatScreen({super.key});
+class CartScreen extends StatelessWidget {
+  const CartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -85,6 +86,26 @@ class CatScreen extends StatelessWidget {
               height: 50,
               width: double.infinity,
               color: Colors.white,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  const Text(
+                    "مجموع 63500 تومان",
+                    style: AppTextStyles.title,
+                  ),
+                  ElevatedButton(
+                    style: AppButtonStyles.mainButtonStyle.copyWith(
+                      backgroundColor:
+                          WidgetStatePropertyAll(Colors.red.shade400),
+                    ),
+                    onPressed: () {},
+                    child: const Text(
+                      AppStrings.continueToPurchase,
+                      style: AppTextStyles.mainbuttn,
+                    ),
+                  )
+                ],
+              ),
             ),
           ],
         ),
