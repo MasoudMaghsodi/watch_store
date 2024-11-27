@@ -78,6 +78,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
               ),
               AppDimens.large.height,
               AppTextField(
+                inputType: TextInputType.number,
                 lable: AppStrings.enterVerificationCode,
                 hint: AppStrings.hintVerificationCode,
                 controller: _controller,
@@ -85,6 +86,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
               ),
               BlocConsumer<AuthCubit, AuthState>(
                 listener: (context, state) {
+                  _timer.cancel();
                   if (state is VerifyedNotRegisteredState) {
                     Navigator.pushNamed(context, ScreenNames.registerScreen);
                   } else if (state is VerifyedIsRegisteredState) {

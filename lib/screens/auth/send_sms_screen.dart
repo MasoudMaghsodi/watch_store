@@ -25,6 +25,7 @@ class SendSmsScreen extends StatelessWidget {
               Image.asset(Assets.png.mainLogo.path),
               AppDimens.large.height,
               AppTextField(
+                inputType: TextInputType.phone,
                 lable: AppStrings.enterYourNumber,
                 hint: AppStrings.hintPhoneNumber,
                 controller: _controller,

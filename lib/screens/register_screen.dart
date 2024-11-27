@@ -1,20 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:watch_store/components/extention.dart';
 import 'package:watch_store/res/dimens.dart';
 import 'package:watch_store/res/strings.dart';
 import 'package:watch_store/route/names.dart';
+import 'package:watch_store/utils/image_handler.dart';
 import 'package:watch_store/widgets/app_text_field.dart';
 import 'package:watch_store/widgets/avatar.dart';
 import 'package:watch_store/widgets/main_button.dart';
 import 'package:watch_store/widgets/registration_app_bar.dart';
 
-class RegisterScreen extends StatelessWidget {
-  RegisterScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
+
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _controllerNameLastName = TextEditingController();
+
   final TextEditingController _controllerHomeNumber = TextEditingController();
+
   final TextEditingController _controllerAddress = TextEditingController();
+
   final TextEditingController _controllerPostalCode = TextEditingController();
+
   final TextEditingController _controllerLocation = TextEditingController();
+
+  ImageHandler imageHandler = ImageHandler();
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -28,7 +43,16 @@ class RegisterScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 AppDimens.large.height,
-                const Avatar(),
+                Avatar(
+                  onTap: () async => await imageHandler
+                      .pickAndCropImage(
+                        source: ImageSource.gallery,
+                      )
+                      .then(
+                        (value) => setState(() {}),
+                      ),
+                  file: imageHandler.getImage,
+                ),
                 AppTextField(
                   lable: AppStrings.nameLastName,
                   hint: AppStrings.hintNameLastName,
